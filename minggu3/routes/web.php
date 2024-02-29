@@ -27,6 +27,11 @@ Route::get('/task', [TaskController::class, 'index']);
 Route::get('/task/create', [TaskController::class, 'create']);
 // Mendefinisikan route untuk URL '/task/store' yang diproses oleh method 'store' dari TaskController
 Route::post('/task/store', [TaskController::class, 'store']);
-Route::get('/task/{task}', [TaskController::class, 'show']);
-Route::get('/task/{id}/edit', [TaskController::class, 'edit']);
-Route::put('/task/{task}', [TaskController::class, 'update']);
+// Rute untuk menampilkan detail suatu task berdasarkan objek task yang diproses oleh method 'show' dari TaskController
+Route::get('/task/{task}', [TaskController::class, 'show']); 
+// Rute untuk menampilkan form edit task berdasarkan ID task yang diproses oleh method 'edit' dari TaskController
+Route::get('/task/{id}/edit', [TaskController::class, 'edit']); 
+// Rute untuk menyimpan perubahan yang dilakukan pada task yang diproses oleh method 'update' dari TaskController
+Route::put('/task/{task}', [TaskController::class, 'update']); 
+// Rute untuk menghapus task dari database berdasarkan objek task yang diproses oleh method 'delete' dari TaskController
+Route::delete('/task/{task}', [TaskController::class, 'delete']); 
